@@ -10,7 +10,7 @@ var App = React.createClass({
   },
   addNewList: function(newTitle){
     this.setState({
-      lists: this.state.lists.concat([<ListContainer title={newTitle}/>])
+      lists: this.state.lists.concat([<ListContainer title={newTitle} key={newTitle}/>])
     })
   },
   render: function(){
