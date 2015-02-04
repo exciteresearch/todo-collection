@@ -1,1 +1,1 @@
-# reactweek-mini1-todolist
+# reactweek-todo-collection
