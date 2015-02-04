@@ -1,8 +1,9 @@
 var React = require('react');
 var AddItem = require('./AddItem');
 var List = require('./List');
+var AddList = require('./AddList');
 
-var App = React.createClass({
+var ListContainer = React.createClass({
   getInitialState: function(){
     return {
       list: []
@@ -22,21 +23,13 @@ var App = React.createClass({
   },
   render: function(){
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-6 col-md-offset-3">
-            <h3 className="text-center"> Todo List </h3>
-            <AddItem add={this.handleAddItem}/>
-            <List items={this.state.list} remove={this.handleRemoveItem}/>
-          </div>
-        </div>
+      <div className="col-sm-6">
+        <h3 className="text-center"> {this.props.title} </h3>
+        <AddItem add={this.handleAddItem}/>
+        <List items={this.state.list} remove={this.handleRemoveItem}/>
       </div>
-
     )
   }
 });
 
-React.render(
-  <App />,
-  document.getElementById('app')
-)
+module.exports = ListContainer;
