@@ -8,9 +8,9 @@ var App = React.createClass({
       lists: []
     }
   },
-  addNewList: function(title){
+  addNewList: function(newList){
     this.setState({
-      lists: this.state.lists.concat([{newTitle: title, index: this.state.lists.length}])
+      lists: this.state.lists.concat([{newTitle: newList.listName, index: this.state.lists.length, bgColor: newList.bgColor}])
     })
   },
   handleRemoveList: function(index){
@@ -22,7 +22,7 @@ var App = React.createClass({
   },
   render: function(){
     var componentList = this.state.lists.map(function(item, index){
-      return <ListContainer title={item.newTitle} key={item.index} index={index} remove={this.handleRemoveList} />
+      return <ListContainer title={item.newTitle} key={item.index} index={index} remove={this.handleRemoveList} bg={item.bgColor}/>
     }.bind(this));
     return (
       <div className="container">

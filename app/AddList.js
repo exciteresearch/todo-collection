@@ -1,9 +1,11 @@
 var React = require('react');
+var ColorList = require('./ColorList');
 
 var AddList = React.createClass({
   getInitialState: function(){
     return {
-      listName: ''
+      listName: '',
+      bgColor: ''
     }
   },
   handleChange: function(e){
@@ -11,19 +13,35 @@ var AddList = React.createClass({
       listName: e.target.value
     });
   },
+  chooseBackground: function(hex){
+    this.setState({
+      bgColor: hex
+    });
+  },
   handleSubmit: function(e){
-    if(e.keyCode === 13){
-      this.props.add(this.state.listName);
-      this.setState({
-        listName: ''
-      })
-    }
+    this.props.add(this.state);
+    this.setState({
+      listName: '',
+      bgColor: ''
+    })
   },
   render: function(){
+    var styles = {
+      box: {
+        background: this.state.bgColor,
+        height: 15,
+        width: 15,
+        display: "inline-block"
+      }
+    }
     return (
       <div className="col-sm-6">
         <h3 className="text-center"> Create New List </h3>
-        <input type="text" placeholder="List Name" className="form-control" value={this.state.listName} onKeyDown={this.handleSubmit} onChange={this.handleChange} />
+        List Name:
+        <input type="text" placeholder="List Name" className="form-control" value={this.state.listName} onChange={this.handleChange} /> <br />
+        List Background Color: <span style={styles.box}></span>
+        <ColorList chooseColor={this.chooseBackground} /> <br />
+        <button className="btn btn-primary" onClick={this.handleSubmit} > Submit </button>
       </div>
     )
   }
