@@ -8,17 +8,27 @@ var App = React.createClass({
       lists: []
     }
   },
-  addNewList: function(newTitle){
+  addNewList: function(title){
     this.setState({
-      lists: this.state.lists.concat([<ListContainer title={newTitle} key={newTitle}/>])
+      lists: this.state.lists.concat([{newTitle: title, index: this.state.lists.length}])
+    })
+  },
+  handleRemoveList: function(index){
+    var tempList = this.state.lists;
+    tempList.splice(index, 1);
+    this.setState({
+      lists: tempList
     })
   },
   render: function(){
+    var componentList = this.state.lists.map(function(item, index){
+      return <ListContainer title={item.newTitle} key={item.index} index={index} remove={this.handleRemoveList} />
+    }.bind(this));
     return (
       <div className="container">
         <div className="row">
           <AddList add={this.addNewList} />
-          {this.state.lists}
+          {componentList}
         </div>
       </div>
     )
