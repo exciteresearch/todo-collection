@@ -27,7 +27,7 @@ var AddList = React.createClass({
   },
   render: function(){
     var styles = {
-      box: {
+      colorIndicator: {
         background: this.state.bgColor,
         height: 15,
         width: 15,
@@ -39,7 +39,7 @@ var AddList = React.createClass({
         <h3 className="text-center"> Create New List </h3>
         List Name:
         <input type="text" placeholder="List Name" className="form-control" value={this.state.listName} onChange={this.handleChange} /> <br />
-        List Background Color: <span style={styles.box}></span>
+        List Background Color: <span style={styles.colorIndicator}></span>
         <ColorList chooseColor={this.chooseBackground} /> <br />
         <button className="btn btn-primary" onClick={this.handleSubmit} > Submit </button>
       </div>

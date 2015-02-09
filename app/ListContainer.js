@@ -40,16 +40,16 @@ var ListContainer = React.createClass({
     return (
       <div className="col-sm-6">
         <div className="col-sm-12" style={styles.container}>
-        <span
-          className="glyphicon glyphicon-remove"
-          style={styles.remove}
-          onClick={this.props.remove.bind(null, this.props.index)}>
-        </span>
-        <h3 className="text-center">
-          {this.props.title}
-        </h3>
-        <AddItem add={this.handleAddItem}/>
-        <List items={this.state.list} remove={this.handleRemoveItem}/>
+          <span
+            className="glyphicon glyphicon-remove"
+            style={styles.remove}
+            onClick={this.props.remove.bind(null, this.props.index)}>
+          </span>
+          <h3 className="text-center">
+            {this.props.title}
+          </h3>
+          <AddItem add={this.handleAddItem}/>
+          <List items={this.state.list} remove={this.handleRemoveItem}/>
         </div>
       </div>
     )
