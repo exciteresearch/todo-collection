@@ -96,4 +96,53 @@ Once you have your ```componentList``` variable, we'll need to swap out some stu
 
 That should do it for step one. You should now be able to create new Todo lists and each Todo list should be able to add invididual todo items. Once you get that working, let's look out how we'll get to the point of removing todo lists. 
 
-###Step 4: Remove Lists
+###Step 4: Remove Lists (ListContainer)
+
+At this point you should be feeling fairly comfortable with React. If you are, go ahead and attempt this section without looking at this README for guidance. You'll find that if you can get through this step on your own, you'll be much better off. However, if you're still feeling a little uncomfortable with everything, keep following these steps. 
+
+Now what we want to do is make it so after we add a list, we have the option to remove that list and all its todo items. 
+
+The nice thing about React is to implement this change, we don't have to change a whole lot of code. We know that each Todo list needs an "X" to remove it, and we know we need some function wherever the collection of todolists live to remove a certain list. Both of those functionalities live in just App.js (which is where the collection of lists lives) and ListContainer.js (which is where the "X" button will go). 
+
+Let's first start with our ListContainer.js file. We need to add two things.
+  1) Some more CSS which will handle the styling of the remove icon.
+  2) An element which will contain the X to remove the item and any functionality along with it. 
+  
+* Head over to your styles object we made earlier and add this new property. 
+```css 
+  remove: {
+    top: 15,
+    color: "rgb(222, 79, 79)",
+    float: "left",
+    cursor: 'pointer'
+  }
+```
+
+That's just the basic styling of our remove "X" button.
+
+* Head down to your render template and above your title add a new span element with the following attributes
+  1) className of "glyphicon glyphicon-remove"
+  2) The style we just created
+  3) Whenever this "X" is clicked, run the ```remove``` method that's on the props object passing it the index (which will also be on props).
+
+###Step 4: Remove Lists (App.js)
+
+Now that our ListContainer has the UI for removing a certain list, let's modify our App.js file to have the remove functionality.
+
+* Add a ```handleRemoveList``` method on the ```App``` component which takes in an index, and removes that list in the passed in index from the ```lists``` state.
+
+Now we need to modify when we're building our ```componentList``` variable to include our new ```handleRemoveList``` method we just built as an attribute to every ```ListContainer```. We also need to pass it the index we're currently on in our map. 
+
+* Add a ```remove``` attribute to ```<ListContainer />``` with the value being the ```handleRemoveList``` method we just made.
+* Add a ```index``` property with the value being the current index we're on in our map. *hint: You can access the index ```map``` is on as the second parameter to your ```map``` function. 
+
+If Webpack is running you should now be able to add and remove lists.
+
+###Step 4: TodoList Background Colors
+
+The very last step you'll need to do is make it so each Todolist can now have its own background color which will be specified when the user creates the new todolist. If you've made it this far that means you're doing really well. I'm not going to walk through steps on how to do this because often times these steps can be crunches to your real education (when you're wanting to rip your hair out because something isn't working). 
+
+Take a glance at the full sample (URL HERE) and then take an attempt on how you'd add this functionality. 
+
+As always, mentors are here to help you if you get stuck.
+
