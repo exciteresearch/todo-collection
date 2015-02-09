@@ -17,7 +17,7 @@ Because everyone is at different levels, this project has three steps to it.
 
 Everyone should try to finish all three tasks, but the minimum bar should be finishing the first step. The way these instructions are going to work is we'll work on finishing #1 before we add any functionality for #2 or #3. Agile-ish.
 
-###Step 1: Clone your Mini Project and AddList
+###Step 1: Clone your Mini Project and Make AddList Component
 We're going to have the same workflow as we had before. Start from the inner most components and work our way back out. 
 
 * Since this project is a continuation of the mini project from earlier, go ahead and copy/clone your mini project to start this project. 
@@ -74,4 +74,26 @@ The very last thing we want to do in our ListContainer.js file is to make the na
 
 * Swap out "Todo List" with the ```title``` property on the ```props``` object.
 
+###Step 3: Changes to App Component
 
+In the Mini Project our App component was just a wrapper around our ListContainer component. However, now that we're adding the ability to add mutliple lists, our App component will now be responsible for maintaining that new state. 
+
+* Set the initial state of App to have a ```lists``` property whose value is an empty Array. This lists property will be the container for all of our todo lists we create.
+
+Our ```lists``` array will eventually get filled up with different objects each representing their own state. This object will eventually contain the title, the index, and the background color of the component. But for now, we'll just have it contain the title and the index.
+
+* Create an ```addNewList``` method on our component that takes in an object with a ```listName``` property, then, add an object with a key of ```newTitle``` and a value of the new title (which you'll get form the object parameter) and another key of index whose value is the current length of the ```lists``` array. *Remember, treat your state as if it's immutable. Don't use ```this.state.lists.push()``` instead look into using something like ```concat```. 
+
+Now we need to modify our render method. 
+
+*Inside of our render method map over the current ```lists``` state and make an array full of ```ListContainer``` components saving them to a variable named ```componentList```. This will get a little tricky. A few tips to remember
+  1) When you use map you'll love the binding of the ```this``` keyword inside your map. Consider using ```.bind(this``` on the outside of your callback function you pass to map to fix this problem. 
+  2) Our ```ListContainer``` component needs two things. A ```title``` and a ```key```. If you're stuck on this step look up at ```addNewList``` and check what exactly we're pushing into our ```lists``` array. 
+
+Once you have your ```componentList``` variable, we'll need to swap out some stuff in the return statement of our render method in order to get the UI to be how we want.
+
+*Remove the current ```<ListContainer />``` component and replace it with the AddList component (don't forget to pass it ```addNewList``` as an ```add``` attribute. Then under that, output your ```componentList``` variable using ```{componentList}``` that syntax. 
+
+That should do it for step one. You should now be able to create new Todo lists and each Todo list should be able to add invididual todo items. Once you get that working, let's look out how we'll get to the point of removing todo lists. 
+
+###Step 4: Remove Lists
