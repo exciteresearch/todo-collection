@@ -125,7 +125,7 @@ That's just the basic styling of our remove "X" button.
   2) The style we just created
   3) Whenever this "X" is clicked, run the ```remove``` method that's on the props object passing it the index (which will also be on props).
 
-###Step 4: Remove Lists (App.js)
+###Step 5: Remove Lists (App.js)
 
 Now that our ListContainer has the UI for removing a certain list, let's modify our App.js file to have the remove functionality.
 
@@ -138,7 +138,7 @@ Now we need to modify when we're building our ```componentList``` variable to in
 
 If Webpack is running you should now be able to add and remove lists.
 
-###Step 4: TodoList Background Colors
+###Step 6: TodoList Background Colors
 
 The very last step you'll need to do is make it so each Todolist can now have its own background color which will be specified when the user creates the new todolist. If you've made it this far that means you're doing really well. I'm not going to walk through steps on how to do this because often times these steps can be crunches to your real education (when you're wanting to rip your hair out because something isn't working). 
 
