@@ -18,7 +18,7 @@ Because everyone is at different levels, this project has three steps to it.
 Everyone should try to finish all three tasks, but the minimum bar should be finishing the first step. The way these instructions are going to work is we'll work on finishing #1 before we add any functionality for #2 or #3. Agile-ish.
 
 ###Step 1: Clone your Mini Project and Make AddList Component
-We're going to have the same workflow as we had before. Start from the inner most components and work our way back out. 
+We're going to have the same work flow as we had before. Start from the inner most components and work our way back out. 
 
 * Since this project is a continuation of the mini project from earlier, go ahead and copy/clone your mini project to start this project. 
 * Once you've cloned your Mini Project go to your ```app``` directory and create a new file called ```AddList.js```. This file is going to contain our new ```AddList``` component. 
@@ -76,13 +76,13 @@ The very last thing we want to do in our ListContainer.js file is to make the na
 
 ###Step 3: Changes to App Component
 
-In the Mini Project our App component was just a wrapper around our ListContainer component. However, now that we're adding the ability to add mutliple lists, our App component will now be responsible for maintaining that new state. 
+In the Mini Project our App component was just a wrapper around our ListContainer component. However, now that we're adding the ability to add multiple lists, our App component will now be responsible for maintaining that new state. 
 
 * Set the initial state of App to have a ```lists``` property whose value is an empty Array. This lists property will be the container for all of our todo lists we create.
 
 Our ```lists``` array will eventually get filled up with different objects each representing their own state. This object will eventually contain the title, the index, and the background color of the component. But for now, we'll just have it contain the title and the index.
 
-* Create an ```addNewList``` method on our component that takes in an object with a ```listName``` property, then, add an object with a key of ```newTitle``` and a value of the new title (which you'll get form the object parameter) and another key of index whose value is the current length of the ```lists``` array. *Remember, treat your state as if it's immutable. Don't use ```this.state.lists.push()``` instead look into using something like ```concat```. 
+* Create an ```addNewList``` method on our component that takes in an object with a ```listName``` property, then, add an object with a key of ```newTitle``` and a value of the new title (which you'll get from the object parameter) and another key of index whose value is the current length of the ```lists``` array. *Remember, treat your state as if it's immutable. Don't use ```this.state.lists.push()``` instead look into using something like ```concat```. 
 
 Now we need to modify our render method. 
 
