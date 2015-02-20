@@ -86,13 +86,13 @@ Our ```lists``` array will eventually get filled up with different objects each 
 
 Now we need to modify our render method. 
 
-*Inside of our render method map over the current ```lists``` state and make an array full of ```ListContainer``` components saving them to a variable named ```componentList```. This will get a little tricky. A few tips to remember
+* Inside of our render method map over the current ```lists``` state and make an array full of ```ListContainer``` components saving them to a variable named ```componentList```. This will get a little tricky. A few tips to remember
   1) When you use map you'll love the binding of the ```this``` keyword inside your map. Consider using ```.bind(this``` on the outside of your callback function you pass to map to fix this problem. 
   2) Our ```ListContainer``` component needs two things. A ```title``` and a ```key```. If you're stuck on this step look up at ```addNewList``` and check what exactly we're pushing into our ```lists``` array. 
 
 Once you have your ```componentList``` variable, we'll need to swap out some stuff in the return statement of our render method in order to get the UI to be how we want.
 
-*Remove the current ```<ListContainer />``` component and replace it with the AddList component (don't forget to pass it ```addNewList``` as an ```add``` attribute. Then under that, output your ```componentList``` variable using ```{componentList}``` that syntax. 
+* Remove the current ```<ListContainer />``` component and replace it with the AddList component (don't forget to pass it ```addNewList``` as an ```add``` attribute. Then under that, output your ```componentList``` variable using ```{componentList}``` that syntax. 
 
 That should do it for step one. You should now be able to create new Todo lists and each Todo list should be able to add invididual todo items. Once you get that working, let's look out how we'll get to the point of removing todo lists. 
 
