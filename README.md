@@ -31,8 +31,8 @@ This component is going to be fairly basic. It's going to just be (initially) an
 Now, just as we did in the mini project, we need to update our state as the user types in the input field. 
 
 * Create a ```handleChange``` method which will update the ```listName``` state of the component to whatever is being typed into the input field.
-* Create a ```handleSubmit``` method that will invoke the ```add``` method that's going to be passed in from the parent component passing that method the current state.
-* After you invoke ```add``` passing it the current state you're going to want to reset the current ```listName``` state to be an empty string.
+* Create a handleSubmit method that will invoke the add method (which we're receiving as a prop from the parent component), passing that method the input's value (via ref).
+* After you invoke add, you're going to want to reset the listName ref value to be an empty string.
 
 So at this point we have our initial state, and we have our helper methods that are going to allow us to keep the initial state updated as well as add the list to the Parent components List array.
 
