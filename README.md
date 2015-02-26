@@ -26,7 +26,6 @@ We're going to have the same work flow as we had before. Start from the inner mo
 This component is going to be fairly basic. It's going to just be (initially) an empty input box and a submit button. Whenever a user enters in information and clicks submit, this component will invoke a method on its parent component passing that method the name of the new list. 
 
 * Create a new React component called AddList and then export it at the bottom of the file.
-* Set the initial state of this component to ```listName``` with an empty value.
 
 Now, just as we did in the mini project, we need to update our state as the user types in the input field. 
 
@@ -34,7 +33,7 @@ Now, just as we did in the mini project, we need to update our state as the user
 * Create a ```handleSubmit``` method that will invoke the ```add``` method that's going to be passed in from the parent component passing that method the current state.
 * After you invoke ```add``` passing it the current state you're going to want to reset the current ```listName``` state to be an empty string.
 
-So at this point we have our initial state, and we have our helper methods that are going to allow us to keep the initial state updated as well as add the list to the Parent components List array.
+So at this point we have our helper method that will allow us to add the list to the Parent components List array.
 
 The last thing we need to do is create a ```render``` method to tell React how we'd like to represent this component in the DOM.
 
