@@ -39,7 +39,7 @@ The last thing we need to do is create a ```render``` method to tell React how w
 
 * Create a render method which will contain the following
   1) An h3 tag with the text being "Create New List". *To center text in bootstrap add a class of "text-center"*
-  2) An input tag whose value is tied to our ```listName``` state and ```onChange``` will invoke our ```handleChange``` method we created earlier.
+  2) An input tag with a ref of 'newListInput'.
   3) A button element that when the user clicks on it will invoke our ```handleSubmit``` method we built earlier. *To make buttons look nice in bootstrap use the class "btn btn-primary"*
 
 
