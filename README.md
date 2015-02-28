@@ -81,7 +81,7 @@ In the Mini Project our App component was just a wrapper around our ListContaine
 
 Our ```lists``` array will eventually get filled up with different objects each representing their own state. This object will eventually contain the title, the index, and the background color of the component. But for now, we'll just have it contain the title and the index.
 
-* Create an ```addNewList``` method on our component that takes in an object with a ```listName``` property, then, add an object with a key of ```newTitle``` and a value of the new title (which you'll get from the object parameter) and another key of index whose value is the current length of the ```lists``` array. *Remember, treat your state as if it's immutable. Don't use ```this.state.lists.push()``` instead look into using something like ```concat```. 
+* Create an ```addNewList``` method on our component. It will take in an object with a ```listName``` property. You are then going to add an object to the state. This object will have a key of ```newTitle``` (The value coming from the addNewList parameters) and another key of ```index``` (whose value is the current length of the ```lists``` array). *Remember, treat your state as if it's immutable. Don't use ```this.state.lists.push()```. Instead look into using something like ```concat```.
 
 Now we need to modify our render method. 
 
