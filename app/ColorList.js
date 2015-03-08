@@ -7,7 +7,8 @@ var ColorList = React.createClass({
         width: "20%",
         height: 50,
         display: "inline-block",
-        cursor: "pointer"
+        cursor: "pointer",
+        border: "none"
       }
     };
     var colors = [
@@ -22,8 +23,12 @@ var ColorList = React.createClass({
           colorBG: {background:  {$set: item.hex}}
       });
       return (
-        <span style={newStyle.colorBG} key={item.color} onClick={this.props.chooseColor.bind(null, newStyle.colorBG.background)}></span>
-      )
+        <button
+          style={newStyle.colorBG}
+          key={item.color}
+          onClick={this.props.chooseColor.bind(null, newStyle.colorBG.background)}
+        />
+      );
     }.bind(this));
 
     return (
